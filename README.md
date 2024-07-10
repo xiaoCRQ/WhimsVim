@@ -49,7 +49,7 @@ git clone https://github.com/xiaoCRQ/WhimsVim_starter $env:LOCALAPPDATA\nvim
 - 克隆
 
 ```sh
-git clone https://github.com/LazyVim/starter ~/.config/nvim
+git clone https://github.com/xiaoCRQ/WhimsVim_starter ~/.config/nvim
 ```
 
 - 删除 `.git` 文件夹，以便稍后将其添加到您自己的存储库
