@@ -22,9 +22,7 @@ WhimsVim 是由 [💤 lazy.nvim](https://github.com/folke/lazy.nvim) 驱动并�
 
 您可以在 [此处](https://github.com/xiaoCRQ/WhimsVim_starter) 找到 **VhimsVim** 的入门模板
 
-<details><summary> 安装 <a href="https://github.com/xiaoCRQ/WhimsVim_starter">Whimsvim_starter</a></summary>
-
-<details style="margin-left: 20px;"><summary > Windows [powershell] </summary>
+<details style="margin-left: 20px;"><summary > 在 Windows [powershell] 上安装 </summary>
 
 - 克隆
 
@@ -46,7 +44,7 @@ git clone https://github.com/xiaoCRQ/WhimsVim_starter $env:LOCALAPPDATA\nvim
 
 </details>
 
-<details style="margin-left: 20px;"><summary > Linux/MacOS </summary>
+<details style="margin-left: 20px;"><summary > 在 Linux/MacOS 上安装 </summary>
 
 - 克隆
 
@@ -67,9 +65,8 @@ git clone https://github.com/LazyVim/starter ~/.config/nvim
   ```
 
 </details>
-</details>
 
-<details><summary> 卸载 <a href="https://github.com/xiaoCRQ/WhimsVim_starter">Whimsvim_starter</a></summary>
+<details><summary> 卸载 </summary>
 
 - Windows[powershell]
 
