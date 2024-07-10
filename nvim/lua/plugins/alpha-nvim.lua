@@ -10,7 +10,7 @@ return {
     require("alpha.term")
 
     dashboard.section.terminal.command =
-      "chafa -c full --fg-only --symbols braille --align=mid C:/Users/xiaoCRQ/AppData/Local/nvim/lua/logo/v-3.gif"
+      "powershell chafa -c full --fg-only --symbols braille --align=mid C:/Users/xiaoCRQ/AppData/Local/nvim/lua/logo/v-3.gif"
 
     dashboard.section.terminal.width = 80
     dashboard.section.terminal.height = 24
