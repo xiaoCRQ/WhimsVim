@@ -1,7 +1,8 @@
 WhimsVim 是由 [💤 lazy.nvim](https://github.com/folke/lazy.nvim) 驱动并基于[💤 lazyvim](https://github.com/LazyVim/LazyVim)的一套 Neovim 配置，可以轻松自定义和扩展您的配置。
 不必在从头开始或使用预制发行版之间做选择，
 
-![image](https://user-images.githubusercontent.com/292349/213447056-92290767-ea16-430c-8727-ce994c93e9cc.png)
+![image](https://github.com/xiaoCRQ/WhimsVim/blob/main/introduce/img/dashboard.png)
+![image](https://github.com/xiaoCRQ/WhimsVim/blob/main/introduce/img/interface.png)
 
 ## ✨ 特性
 
@@ -31,7 +32,7 @@ WhimsVim 是由 [💤 lazy.nvim](https://github.com/folke/lazy.nvim) 驱动并�
   mv ~/.local/share/nvim ~/.local/share/nvim.bak
   ```
 
-- 克隆 starter
+- 克隆 WhimsVim
 
   ```sh
   git clone https://github.com/LazyVim/starter ~/.config/nvim
