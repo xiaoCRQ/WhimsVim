@@ -27,20 +27,20 @@ WhimsVim 是由 [💤 lazy.nvim](https://github.com/folke/lazy.nvim) 驱动并�
 - 备份您当前的 Neovim 文件
 
   ```sh
-  mv ~/.config/nvim ~/.config/nvim.bak
-  mv ~/.local/share/nvim ~/.local/share/nvim.bak
+Move-Item $env:LOCALAPPDATA\nvim $env:LOCALAPPDATA\nvim.bak
+Move-Item $env:LOCALAPPDATA\nvim-data $env:LOCALAPPDATA\nvim-data.bak
   ```
 
 - 克隆 [WhimsVim_starter](https://github.com/xiaoCRQ/WhimsVim_starter)
 
   ```sh
-  git clone https://github.com/xiaoCRQ/WhimsVim_starter.git  ~/.config/nvim
+  git clone https://github.com/xiaoCRQ/WhimsVim_starter $env:LOCALAPPDATA\nvim
   ```
 
 - 删除 `.git` 文件夹，以便稍后将其添加到您自己的存储库
 
   ```sh
-  rm -rf ~/.config/nvim/.git
+  Remove-Item $env:LOCALAPPDATA\nvim\.git -Recurse -Force
   ```
 
 - 启动 Neovim!
