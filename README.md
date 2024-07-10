@@ -24,13 +24,6 @@ WhimsVim 是由 [💤 lazy.nvim](https://github.com/folke/lazy.nvim) 驱动并�
 
 <details><summary> 安装 <a href="https://github.com/xiaoCRQ/WhimsVim_starter">Whimsvim_starter</a></summary>
 
-- 备份您当前的 Neovim 文件
-
-  ```sh
-Move-Item $env:LOCALAPPDATA\nvim $env:LOCALAPPDATA\nvim.bak
-Move-Item $env:LOCALAPPDATA\nvim-data $env:LOCALAPPDATA\nvim-data.bak
-  ```
-
 - 克隆 [WhimsVim_starter](https://github.com/xiaoCRQ/WhimsVim_starter)
 
   ```sh
