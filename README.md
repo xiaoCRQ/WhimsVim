@@ -21,9 +21,9 @@ WhimsVim 是由 [💤 lazy.nvim](https://github.com/folke/lazy.nvim) 驱动并�
 
 ## 🚀 入门
 
-您可以在 [此处](https://github.com/LazyVim/starter) 找到 **VhimsVim** 的入门模板
+您可以在 [此处](https://github.com/xiaoCRQ/WhimsVim/tree/main/nvim) 找到 **VhimsVim** 的入门模板
 
-<details><summary> 安装 <a href="https://github.com/LazyVim/starter">Whimsvim</a></summary>
+<details><summary> 安装 <a href="https://github.com/xiaoCRQ/WhimsVim/tree/main/nvim">Whimsvim</a></summary>
 
 - 备份您当前的 Neovim 文件
 
@@ -35,7 +35,7 @@ WhimsVim 是由 [💤 lazy.nvim](https://github.com/folke/lazy.nvim) 驱动并�
 - 克隆 WhimsVim
 
   ```sh
-  git clone https://github.com/LazyVim/starter ~/.config/nvim
+  git clone https://github.com/xiaoCRQ/WhimsVim/tree/main/nvim ~/.config/nvim
   ```
 
 - 删除 `.git` 文件夹，以便稍后将其添加到您自己的存储库
