@@ -22,7 +22,7 @@ WhimsVim 是由 [💤 lazy.nvim](https://github.com/folke/lazy.nvim) 驱动并�
 
 您可以在 [此处](https://github.com/xiaoCRQ/WhimsVim_starter) 找到 **VhimsVim** 的入门模板
 
-<details><summary> 安装 <a href="https://github.com/xiaoCRQ/WhimsVim_starter">Whimsvim</a></summary>
+<details><summary> 安装 <a href="https://github.com/xiaoCRQ/WhimsVim_starter">Whimsvim_starter</a></summary>
 
 - 备份您当前的 Neovim 文件
 
