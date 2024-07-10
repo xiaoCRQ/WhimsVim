@@ -71,6 +71,13 @@ git clone https://github.com/LazyVim/starter ~/.config/nvim
 
 <details><summary> 卸载 <a href="https://github.com/xiaoCRQ/WhimsVim_starter">Whimsvim_starter</a></summary>
 
+- Windows[powershell]
+
+```sh
+  Remove-Item -Path "$env:LOCALAPPDATA\nvim" -Recurse -Force
+  Remove-Item -Path "$env:LOCALAPPDATA\nvim-data" -Recurse -Force
+```
+
 </details>
 
 ---
