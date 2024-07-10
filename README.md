@@ -56,7 +56,7 @@ WhimsVim 是由 [💤 lazy.nvim](https://github.com/folke/lazy.nvim) 驱动并�
 ## 📂 文件结构
 
 config 下的文件会在适当的时候自动加载，所以你不需要手动引入这些文件。
-**LazyVim** 带有一组默认配置文件，这些文件将在您的配置**之前**加载。
+**WhimsVim** 带有一组默认配置文件，这些文件将在您的配置**之前**加载。
 
 您可以在 `lua/plugins/` 下添加自定义插件配置(specs)。
 [lazy.nvim](https://github.com/folke/lazy.nvim) 会自动加载这些文件。
