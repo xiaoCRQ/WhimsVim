@@ -24,11 +24,13 @@ WhimsVim 是由 [💤 lazy.nvim](https://github.com/folke/lazy.nvim) 驱动并�
 
 <details><summary> 安装 <a href="https://github.com/xiaoCRQ/WhimsVim_starter">Whimsvim_starter</a></summary>
 
-- 克隆 [WhimsVim_starter](https://github.com/xiaoCRQ/WhimsVim_starter)
+<details style="margin-left: 20px;"><summary > Windows [powershell] </summary>
 
-  ```sh
-  git clone https://github.com/xiaoCRQ/WhimsVim_starter $env:LOCALAPPDATA\nvim
-  ```
+- 克隆
+
+```sh
+git clone https://github.com/xiaoCRQ/WhimsVim_starter $env:LOCALAPPDATA\nvim
+```
 
 - 删除 `.git` 文件夹，以便稍后将其添加到您自己的存储库
 
@@ -41,6 +43,33 @@ WhimsVim 是由 [💤 lazy.nvim](https://github.com/folke/lazy.nvim) 驱动并�
   ```sh
   nvim
   ```
+
+</details>
+
+<details style="margin-left: 20px;"><summary > Linux/MacOS </summary>
+
+- 克隆
+
+```sh
+git clone https://github.com/LazyVim/starter ~/.config/nvim
+```
+
+- 删除 `.git` 文件夹，以便稍后将其添加到您自己的存储库
+
+  ```sh
+  rm -rf ~/.config/nvim/.git
+  ```
+
+- 启动 Neovim!
+
+  ```sh
+  nvim
+  ```
+
+</details>
+</details>
+
+<details><summary> 卸载 <a href="https://github.com/xiaoCRQ/WhimsVim_starter">Whimsvim_starter</a></summary>
 
 </details>
 
@@ -62,6 +91,7 @@ config 下的文件会在适当的时候自动加载，所以你不需要手动�
 │   │   ├── keymaps.lua
 │   │   ├── lazy.lua
 │   │   └── options.lua
+│   │   └── **
 │   └── plugins
 │       ├── spec1.lua
 │       ├── **
