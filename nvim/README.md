@@ -1,8 +1,7 @@
-WhimsVim 是由 [💤 lazy.nvim](https://github.com/folke/lazy.nvim) 驱动并基于[💤 lazyvim](https://github.com/LazyVim/LazyVim)的一套 Neovim 配置，可以轻松自定义和扩展您的配置。
-不必在从头开始或使用预制发行版之间做选择，
-
 ![image](https://github.com/xiaoCRQ/WhimsVim/blob/main/introduce/img/dashboard.png)
 ![image](https://github.com/xiaoCRQ/WhimsVim/blob/main/introduce/img/interface.png)
+WhimsVim 是由 [💤 lazy.nvim](https://github.com/folke/lazy.nvim) 驱动并基于[💤 lazyvim](https://github.com/LazyVim/LazyVim)的一套 Neovim 配置，可以轻松自定义和扩展您的配置。
+不必在从头开始或使用预制发行版之间做选择，
 
 ## ✨ 特性
 
@@ -21,9 +20,9 @@ WhimsVim 是由 [💤 lazy.nvim](https://github.com/folke/lazy.nvim) 驱动并�
 
 ## 🚀 入门
 
-您可以在 [此处](https://github.com/xiaoCRQ/WhimsVim/tree/main/nvim) 找到 **VhimsVim** 的入门模板
+您可以在 [此处](https://github.com/xiaoCRQ/WhimsVim_starter) 找到 **VhimsVim** 的入门模板
 
-<details><summary> 安装 <a href="https://github.com/xiaoCRQ/WhimsVim/tree/main/nvim">Whimsvim</a></summary>
+<details><summary> 安装 <a href="https://github.com/xiaoCRQ/WhimsVim_starter">Whimsvim_starter</a></summary>
 
 - 备份您当前的 Neovim 文件
 
@@ -32,10 +31,10 @@ WhimsVim 是由 [💤 lazy.nvim](https://github.com/folke/lazy.nvim) 驱动并�
   mv ~/.local/share/nvim ~/.local/share/nvim.bak
   ```
 
-- 克隆 WhimsVim
+- 克隆 [WhimsVim_starter](https://github.com/xiaoCRQ/WhimsVim_starter)
 
   ```sh
-  git clone https://github.com/xiaoCRQ/WhimsVim/tree/main/nvim ~/.config/nvim
+  git clone https://github.com/xiaoCRQ/WhimsVim_starter.git  ~/.config/nvim
   ```
 
 - 删除 `.git` 文件夹，以便稍后将其添加到您自己的存储库
@@ -57,7 +56,7 @@ WhimsVim 是由 [💤 lazy.nvim](https://github.com/folke/lazy.nvim) 驱动并�
 ## 📂 文件结构
 
 config 下的文件会在适当的时候自动加载，所以你不需要手动引入这些文件。
-**LazyVim** 带有一组默认配置文件，这些文件将在您的配置**之前**加载。
+**WhimsVim** 带有一组默认配置文件，这些文件将在您的配置**之前**加载。
 
 您可以在 `lua/plugins/` 下添加自定义插件配置(specs)。
 [lazy.nvim](https://github.com/folke/lazy.nvim) 会自动加载这些文件。
