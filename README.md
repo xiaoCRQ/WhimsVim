@@ -19,25 +19,32 @@ WhimsVim 是由 [💤 lazy.nvim](https://github.com/folke/lazy.nvim) 驱动并�
 - 一个 [Nerd Font](https://www.nerdfonts.com/) 字体 **_(可选)_**
 - 安装 [chafa](https://github.com/hpjansson/chafa) 终端播放器 **_(可选-用于仪表盘动画)_**
 - 拥有 powershell 终端 **_(可选-用于仪表盘动画)_**
-
-- 一个用于 `nvim-treesitter` 的 **C** 编译器。看 [这里](https://github.com/nvim-treesitter/nvim-treesitter#requirements)
+- [C/C++ 编译器](https://winlibs.com/) **(可选)**
 
 ## 🚀 入门
 
 您可以在 [此处](https://github.com/xiaoCRQ/WhimsVim_starter) 找到 **VhimsVim** 的入门模板,
 操作详解的 [Wiki](https://github.com/xiaoCRQ/WhimsVim/wiki)
 
-<details ><summary > Windows [powershell] 上安装 </summary>
+<details ><summary > Windows </summary>
 
 - 克隆
 
-```sh
-git clone https://github.com/xiaoCRQ/WhimsVim_starter $env:LOCALAPPDATA\nvim
-```
+  ```sh
+  # cmd
+  git clone https://github.com/xiaoCRQ/WhimsVim_starter %USERPROFILE%\AppData\Local\nvim
+
+  # powershell
+  git clone https://github.com/xiaoCRQ/WhimsVim_starter $env:LOCALAPPDATA\nvim
+  ```
 
 - 删除 `.git` 文件夹，以便稍后将其添加到您自己的存储库
 
   ```sh
+  # cmd
+  rmdir /s  %USERPROFILE%\AppData\Local\nvim\.git
+
+  # powershell
   Remove-Item $env:LOCALAPPDATA\nvim\.git -Recurse -Force
   ```
 
@@ -49,13 +56,13 @@ git clone https://github.com/xiaoCRQ/WhimsVim_starter $env:LOCALAPPDATA\nvim
 
 </details>
 
-<details><summary > Linux/MacOS 上安装 </summary>
+<details><summary > Linux/MacOS  </summary>
 
 - 克隆
 
-```sh
-git clone https://github.com/xiaoCRQ/WhimsVim_starter ~/.config/nvim
-```
+  ```sh
+  git clone https://github.com/xiaoCRQ/WhimsVim_starter ~/.config/nvim
+  ```
 
 - 删除 `.git` 文件夹，以便稍后将其添加到您自己的存储库
 
@@ -71,14 +78,32 @@ git clone https://github.com/xiaoCRQ/WhimsVim_starter ~/.config/nvim
 
 </details>
 
-<details><summary> 卸载 <a href="https://github.com/xiaoCRQ/WhimsVim_starter">Whimsvim_starter</a></summary>
+---
 
-- Windows[powershell]
+## 🗑️ 卸载
+
+<details ><summary > Windows </summary>
 
 ```sh
-  Remove-Item -Path "$env:LOCALAPPDATA\nvim" -Recurse -Force
-  Remove-Item -Path "$env:LOCALAPPDATA\nvim-data" -Recurse -Force
+# cmd
+rmdir /s  %USERPROFILE%\AppData\Local\nvim
+rmdir /s  %USERPROFILE%\AppData\Local\nvim-data
+
+# powershell
+Remove-Item -Path "$env:LOCALAPPDATA\nvim" -Recurse -Force
+Remove-Item -Path "$env:LOCALAPPDATA\nvim-data" -Recurse -Force
 ```
+
+</details>
+
+<details><summary > Linux/MacOS </summary>
+
+```sh
+rm -rf ~/.config/nvim
+rm -rf ~/.local/state/nvim
+rm -rf ~/.local/share/nvim
+```
+
 </details>
 
 ---
