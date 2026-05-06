@@ -21,6 +21,8 @@ return {
         "fallback",
       },
       ["<S-Tab>"] = { "snippet_backward", "fallback" },
+      ["<C-k>"] = { "select_prev", "fallback" },
+      ["<C-j>"] = { "select_next", "fallback" },
       -- ["<CR>"] = false, -- 关闭Enter补全
     },
     sources = {
