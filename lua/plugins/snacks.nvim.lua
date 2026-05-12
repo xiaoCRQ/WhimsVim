@@ -2,6 +2,9 @@ return {
   "folke/snacks.nvim",
   lazy = false,
   opts = {
+    terminal = {
+      shell = "fish",
+    },
     dashboard = {
       enabled = true,
       preset = {

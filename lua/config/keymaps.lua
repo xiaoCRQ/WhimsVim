@@ -85,6 +85,13 @@ for k, v in pairs(cmd_map) do
   map("n", k, v, opt)
 end
 
+-- 终端缓冲区（非分屏，作为普通缓冲区打开）
+map("n", "<leader>tt", function()
+  vim.cmd("enew!")
+  vim.fn.termopen("fish")
+  vim.cmd("startinsert")
+end, vim.tbl_extend("force", opt, { desc = "Open fish terminal buffer" }))
+
 function _G.set_terminal_keymaps()
   local opt = { buffer = 0 }
 
@@ -95,32 +102,71 @@ function _G.set_terminal_keymaps()
     map("t", "<C-" .. key .. ">", "<Cmd>wincmd " .. key .. "<CR>", opt)
   end
 
-  map("t", "qq", [[<C-\><C-n><C-w>]], opt)
+  -- 命令快捷键（终端模式）
+  local t_cmd_map = {
+    -- q = [[<C-\><C-n>:bd!<CR>]],
+    -- qq = [[<C-\><C-n>:q!<CR>]],
+    -- qa = [[<C-\><C-n>:qa!<CR>]],
+    -- qw = [[<C-\><C-n>:wq!<CR>]],
+    -- qwa = [[<C-\><C-n>:w!<CR>:qa<CR>]],
+    -- w = [[<C-\><C-n>:w!<CR>]],
+    -- wq = [[<C-\><C-n>:wq!<CR>]],
+    -- wqa = [[<C-\><C-n>:w!<CR>:qa<CR>]],
+  }
+
+  for k, v in pairs(t_cmd_map) do
+    map("t", k, v, opt)
+  end
+
+  -- 窗口导航（终端模式）
+  local t_win_map = {
+    ["<m-h>"] = [[<C-\><C-n><C-w>h]],
+    ["<m-l>"] = [[<C-\><C-n><C-w>l]],
+    ["<m-j>"] = [[<C-\><C-n><C-w>j]],
+    ["<m-k>"] = [[<C-\><C-n><C-w>k]],
+  }
+
+  for k, v in pairs(t_win_map) do
+    map("t", k, v, opt)
+  end
+
+  -- leader组合键（终端模式）
+  map("t", "<leader>tt", [[<C-\><C-n>:enew! | call termopen('fish') | startinsert<CR>]], opt)
 end
 
--- nvim-dap
--- 🟢 启动与控制 (Execution Control)
--- <leader>dc (Run/Continue): 启动调试会话，或者如果程序已暂停，则继续运行到下一个断点。
--- <leader>da (Run with Args): 运行程序并允许输入自定义参数（需要 get_args 函数支持）。
--- <leader>dl (Run Last): 重新运行最后一次使用的调试配置。
--- <leader>dL (Load VSCode Launch Config (Upward Search)): 加载新配置。
--- <leader>dt (Terminate): 立即停止当前的调试会话。
--- <leader>dP (Pause): 暂停正在运行的程序。
--- <leader>ds (Session): 获取当前调试会话的对象信息。
+vim.api.nvim_create_autocmd("TermOpen", {
+  callback = function()
+    vim.bo.modifiable = false
+    _G.set_terminal_keymaps()
+  end,
+})
 
--- 🔴 断点管理 (Breakpoints)
--- <leader>db (Toggle Breakpoint): 在当前行切换断点（开启或关闭）。
--- <leader>dB (Breakpoint Condition): 设置条件断点。按下后会弹出输入框，只有当输入的表达式为真时，程序才会在此处暂停。
--- <leader>dC (Run to Cursor): 让程序一直运行，直到到达光标所在的行。
+-- nvim-dap 调试快捷键 (由 LazyVim dap.core 提供 + 自定义 dL)
 
--- 🟡 步进操作 (Stepping)
--- <leader>dO (Step Over): 单步跳过。执行当前行，不进入函数内部，直接停在下一行。
--- <leader>di (Step Into): 单步进入。如果当前行有函数调用，则进入该函数内部。
--- <leader>do (Step Out): 单步跳出。运行完当前函数剩余部分，并在返回调用处时暂停。
--- <leader>dg (Go to Line): 强制将执行位置跳转到当前光标行，但不执行中间的代码（慎用，可能会导致状态异常）。
+-- 🟢 启动与控制
+-- <leader>dc  继续/启动 (Continue) — 启动调试或运行到下一断点
+-- <leader>da  带参数运行 (Run with Args) — 弹出输入框设置命令行参数
+-- <leader>dl  重复上次 (Run Last) — 使用上一次的调试配置重新运行
+-- <leader>dL  加载 launch.json (Load Config) — 【自定义】向上搜索 .vscode/launch.json 并加载
+-- <leader>dt  终止 (Terminate) — 立即停止当前调试会话
+-- <leader>dP  暂停 (Pause) — 暂停正在运行的程序
+-- <leader>ds  会话信息 (Session) — 查看当前调试会话详情
 
--- 🔵 堆栈与界面 (UI & Stack)
--- <leader>dk (Up): 在调用堆栈中向上移动（查看调用当前函数的上一层代码）。
--- <leader>dj (Down): 在调用堆栈中向下移动。
--- <leader>dr (Toggle REPL): 打开/关闭交互式控制台（REPL），你可以在这里输入变量名查看值或执行代码段。
--- <leader>dw (Widgets): 弹出悬浮窗口显示当前光标下变量的值或相关调试组件。
+-- 🔴 断点管理
+-- <leader>db  切换断点 (Toggle Breakpoint) — 在当前行添加/移除断点
+-- <leader>dB  条件断点 (Condition) — 输入表达式，表达式为真时触发断点
+-- <leader>dC  运行到光标 (Run to Cursor) — 程序执行到光标所在行暂停
+
+-- 🟡 步进
+-- <leader>dO  单步跳过 (Step Over) — 执行当前行，不进入函数内部
+-- <leader>di  单步进入 (Step Into) — 进入当前行的函数内部
+-- <leader>do  单步跳出 (Step Out) — 执行完当前函数并返回调用处
+-- <leader>dg  跳转到行 (Go to Line) — 跳转执行位置到光标行（跳过中间代码）
+
+-- 🔵 堆栈与界面
+-- <leader>dk  堆栈上行 (Stack Up) — 查看调用当前函数的上一层
+-- <leader>dj  堆栈下行 (Stack Down) — 查看调用堆栈的下一层
+-- <leader>dr  REPL 开关 (Toggle REPL) — 交互式控制台，可输入变量名/表达式求值
+-- <leader>dw  悬浮变量 (Widgets Hover) — 悬浮窗口显示光标下变量的值
+-- <leader>du  Dap UI 开关 (Toggle UI) — 打开/关闭调试面板 (变量/堆栈/断点列表)
+-- <leader>de  求值 (Eval) — 对选中文本或光标处表达式求值 (n/x 模式)

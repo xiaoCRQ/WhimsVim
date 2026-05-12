@@ -34,7 +34,7 @@ map(
 return {
   {
     "xiaocrq/faster-oj.nvim",
-    dir = "~/Work/Program/Project/faster-oj.nvim",
+    -- dir = "~/Work/Program/Project/faster-oj.nvim",
     opts = {
       -- debug = true,
       -- obscure = false,
