@@ -1,23 +1,15 @@
 return {
   "saghen/blink.cmp",
   dependencies = {
-    {
-      "Kaiser-Yang/blink-cmp-dictionary",
-      dependencies = { "nvim-lua/plenary.nvim" },
-    },
+    "Kaiser-Yang/blink-cmp-dictionary",
+    "nvim-lua/plenary.nvim",
   },
   opts = {
     keymap = {
       ["<C-y>"] = { "select_and_accept" },
       ["<Tab>"] = {
-        function(cmp)
-          if cmp.snippet_active() then
-            return cmp.accept()
-          else
-            return cmp.select_and_accept()
-          end
-        end,
         "snippet_forward",
+        "select_and_accept",
         "fallback",
       },
       ["<S-Tab>"] = { "snippet_backward", "fallback" },
@@ -25,8 +17,17 @@ return {
       ["<C-j>"] = { "select_next", "fallback" },
       -- ["<CR>"] = false, -- 关闭Enter补全
     },
+    snippets = {
+      preset = "luasnip", -- 使用新的预设配置
+    },
     sources = {
-      default = { "dictionary", "lsp", "path", "buffer" },
+      default = {
+        "lsp",
+        "snippets",
+        "path",
+        "dictionary",
+        "buffer",
+      },
       providers = {
         dictionary = {
           module = "blink-cmp-dictionary",
@@ -44,12 +45,9 @@ return {
           score_offset = 80, -- 设置 path 的优先级
         },
         buffer = {
-          score_offset = 60, -- 设置 buffer 的优先级
+          score_offset = 20, -- 设置 buffer 的优先级
         },
       },
-    },
-    snippets = {
-      preset = "luasnip", -- 使用新的预设配置
     },
   },
 }

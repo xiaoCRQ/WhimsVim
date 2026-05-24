@@ -1,3 +1,5 @@
+local CMD = "chafa --symbols solid --scale max --clear --probe off "
+-- local CMD = "chafa --format kitty --scale max --align=mid --clear "
 return {
   "folke/snacks.nvim",
   lazy = false,
@@ -30,9 +32,7 @@ return {
       sections = {
         {
           section = "terminal",
-          cmd = "chafa -c full --format symbols --symbols solid --align=mid --clear --probe off " .. vim.fn.stdpath(
-            "config"
-          ) .. "/lua/logo/v-3.gif ",
+          cmd = CMD .. vim.fn.stdpath("config") .. "/lua/logo/v-3.gif ",
           height = 18,
           padding = 1,
         },
